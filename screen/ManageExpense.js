@@ -16,9 +16,17 @@ const ManageExpense = ({ route, navigation }) => {
     });
   }, [navigation, isEditing]);
 
-  function deleteExpeneseHandler() {}
+  function deleteExpeneseHandler() {
+    navigation.goBack();
+  }
 
-  function cancelHandler() {}
+  function cancelHandler() {
+    navigation.goBack();
+  }
+
+  function confirmHandler() {
+    navigation.goBack();
+  }
 
   return (
     <View style={styles.container}>
@@ -26,7 +34,9 @@ const ManageExpense = ({ route, navigation }) => {
         <Button style={styles.button} mode="flat" onPress={cancelHandler}>
           Cancel
         </Button>
-        <Button style={styles.button}>{isEditing ? "Update" : "Add"}</Button>
+        <Button onPress={confirmHandler} style={styles.button}>
+          {isEditing ? "Update" : "Add"}
+        </Button>
       </View>
       {isEditing && (
         <View style={styles.deleteContainer}>
