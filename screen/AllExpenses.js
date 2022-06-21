@@ -8,7 +8,11 @@ const AllExpenses = () => {
   const expenseCtx = useContext(ExpensesContext);
 
   return (
-    <ExpensesOutput expenses={expenseCtx.expenses} expensesPeriod="Total" />
+    <ExpensesOutput
+      fallbackText="No registered expenses found"
+      expenses={expenseCtx.expenses}
+      expensesPeriod="Total"
+    />
   );
 };
 
