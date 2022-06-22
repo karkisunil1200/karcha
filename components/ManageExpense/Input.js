@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, TextInput } from "react-native";
 import React from "react";
 import { GlobalStyles } from "../../constants/styles";
 
-const Input = ({ label, textInputConfig }) => {
+const Input = ({ label, style, textInputConfig }) => {
   let inputStyles = [styles.input];
 
   if (textInputConfig && textInputConfig.multiline) {
@@ -10,7 +10,7 @@ const Input = ({ label, textInputConfig }) => {
   }
 
   return (
-    <View style={styles.inputContainer}>
+    <View style={[styles.inputContainer, style]}>
       <Text style={styles.label}>{label}</Text>
       <TextInput style={inputStyles} {...textInputConfig} />
     </View>
